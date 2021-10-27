@@ -2,9 +2,9 @@ import triad_openvr
 import numpy as np
 from lib import calibration
 
-DEFAULT_TRANSFORM = np.array([ [1, 0, 0, 1.5],
-                               [0, -1, 0, 1],
-                               [0, 0, 1, 0]])
+DEFAULT_TRANSFORM = np.array([[1, 0, 0, 1.5],
+                              [0, -1, 0, 1],
+                              [0, 0, 1, 0]])
 DEFAULT_TRACKER_NAME = "tracker_1"
 
 
@@ -18,9 +18,8 @@ class HtcTracking:
         if calibrate != 0:
             self.calibration_module(calibrate)
         else:
-            self.linear_shift = np.loadtxt("/home/cobotar/Documents/projects/triad_openvr/lin_shift")
-            self.rotation_shift = np.loadtxt("/home/cobotar/Documents/projects/triad_openvr/rot_shift")
-
+            self.linear_shift = np.loadtxt("config/lin_shift.txt")
+            self.rotation_shift = np.loadtxt("config/rot_shift")
 
     def calibration_module(self, num_of_calibration):
         calibrate_parameters = calibration.CalibrationHTC()
@@ -31,8 +30,8 @@ class HtcTracking:
             input()
             measured_coordinates.append(self.get_transformed_coordinates())
             print(measured_coordinates[i])
-        self.linear_shift, self.rotation_shift = calibrate_parameters.calibration(num_of_calibration, measured_coordinates)
-
+        self.linear_shift, self.rotation_shift = calibrate_parameters.calibration(num_of_calibration,
+                                                                                  measured_coordinates)
 
     def get_transformed_coordinates(self):
         htc_coordinates = self._get_htc_coordinates()
@@ -67,7 +66,7 @@ class HtcTracking:
 
 def main():
     tracker = HtcTracking(calibrate=1)
-    while(1):
+    while True:
         tracker.get_filtered_coordinates(verbose=True)
 
 

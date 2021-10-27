@@ -3,7 +3,7 @@ import numpy as np
 
 class CalibrationHTC:
     def __init__(self):
-        self.preset_data_for_calibration = np.loadtxt("../config/preset_data_calibration.txt")
+        self.preset_data_for_calibration = np.loadtxt("config/preset_data_calibration.txt")
 
     def get_length(self, num_of_calibration):
         return len(self.preset_data_for_calibration[num_of_calibration - 1])
@@ -13,8 +13,8 @@ class CalibrationHTC:
             print(measurements[i])
         linear_parameter, rotation_parameter = self.calculation_shift(self.preset_data_for_calibration[num_of_calibration - 1],
                                                                       measurements)
-        np.savetxt("test_1_measured_coordinates", measurements)
-        np.savetxt("test_1_real_coordinates", self.preset_data_for_calibration[num_of_calibration - 1])
+        np.savetxt("logs/test_1_measured_coordinates", measurements)
+        np.savetxt("logs/test_1_real_coordinates", self.preset_data_for_calibration[num_of_calibration - 1])
         return linear_parameter, rotation_parameter
 
     def calculation_shift(self, true_data, measurements):
@@ -39,6 +39,6 @@ class CalibrationHTC:
         print('Final error x = ', errors_final[0], ' y = ', errors_final[1])
         print('Average error = ', np.mean((errors_final[0:2])))
 
-        np.savetxt("lin_shift", linear_shift)
-        np.savetxt("rot_shift", rotation_shift)
+        np.savetxt("config/lin_shift", linear_shift)
+        np.savetxt("config/rot_shift", rotation_shift)
         return linear_shift, rotation_shift
