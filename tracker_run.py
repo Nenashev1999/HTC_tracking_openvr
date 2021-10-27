@@ -1,4 +1,4 @@
-import triad_openvr
+from lib import triad_openvr
 import numpy as np
 from lib import calibration
 
@@ -10,8 +10,8 @@ DEFAULT_TRACKER_NAME = "tracker_1"
 
 class HtcTracking:
     def __init__(self, tracker_name=DEFAULT_TRACKER_NAME, default_transform=DEFAULT_TRANSFORM, calibrate=0):
-        self._device = triad_openvr.triad_openvr()
-        self._device.print_discovered_objects()
+        #self._device = triad_openvr.triad_openvr()
+        #self._device.print_discovered_objects()
         self._tracker_name = tracker_name
         self.main_coordinates = None
         self._default_transform = default_transform
@@ -48,7 +48,7 @@ class HtcTracking:
         return result[0]
 
     def _get_htc_coordinates(self):
-        return list(self._device.devices[self._tracker_name].get_pose_euler())
+        return list((1, 1, 1, 1, 1, 1))#list(self._device.devices[self._tracker_name].get_pose_euler())
 
     def get_filtered_coordinates(self, verbose=False):
         htc_coordinates = self._get_htc_coordinates()
