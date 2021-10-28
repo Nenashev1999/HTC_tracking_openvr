@@ -26,4 +26,20 @@ Creating file in config/preset_data_calibration_3.txt:
 .
 .
 ```
-After creating coordinates
+After creating coordinates, we should create our coordinates matrix in file config/transformation_matrix.txt
+```
+1, 0, 0, 1.5
+0, 1, 0, 1
+0, 0, 1, 0
+where elements from [0,0] to [2,2] is our coordinates in my case I don't change coordinates by multiplying, and matrix from [3,0] to [3,2] is shifting of coordinates in my case, I shift x + 1.5 and y + 1
+```
+### Calibration of algorithm
+Open the file run_calibration.py and change the parametr of calibration "calibration_config_id='*'" where * is a number of your file with coordinates for calibration.
+Run the calibration
+```
+python3 run_calibration.py
+```
+Follow to instruction and after finishing run:
+```
+python3 run_htc_tracker.py
+```
