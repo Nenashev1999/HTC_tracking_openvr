@@ -31,8 +31,9 @@ After creating coordinates, we should create coordinates matrix in file config/t
 1 0 0 1.5
 0 1 0 1
 0 0 1 0
-where elements from [0,0] to [2,2] is our coordinates in my case I don't change coordinates by multiplying, and matrix from [3,0] to [3,2] is shifting of coordinates in my case, I shift x + 1.5 and y + 1
 ```
+where elements from [0,0] to [2,2] is our coordinates in my case I don't change coordinates by multiplying, and matrix from [3,0] to [3,2] is shifting of coordinates in my case, I shift x + 1.5 and y + 1
+
 ### Calibration of algorithm
 Open the file run_calibration.py and change the parametr of calibration "calibration_config_id='*'".
 Where * is a number of your file with coordinates for calibration.
@@ -42,7 +43,8 @@ python3 run_calibration.py
 ```
 Follow to instruction.
 ### Running the algorithm
-After calibration all parameters will be saved in config and you can run the algorithm
+After calibration all parameters will be saved in config and you can run the algorithm, it will work 50sec and write data into a file, to change this parameters open the file run_htc_tracker and change parameter eps_time and path_to_save
+
 ```
 python3 run_htc_tracker.py
 ```
