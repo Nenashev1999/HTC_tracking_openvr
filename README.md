@@ -7,13 +7,19 @@ This algorithm can help to calibrate and geting position of the object.
 
 ### Preparation
 
-You should have HTC tracking VR system and tracker of controller.
-First you should download Steam software and in Steam you should download SteamVR
+You should have HTC tracking VR system and tracker or controller.
+First you should download Steam software and in Steam you should download SteamVR.
 After you should launch the SteamVR and turn on all devices ralated to VR.
-Next step is calibration of space for calibration press right button and press "room setup" and follow the instruction.
+Next step is calibration of space for calibration click right button in VR application and press "room setup" and follow the instruction.
 
 After calibration you can use software, but you need to calibrate shifting of global coordinates. 
 For this step make some points on your plane, and measure it true coordinates x, y, z, and add it to the "config/preset_data_calibration_*.txt" where * is your number of calibration.
+For checking coordinate system without transformation check file config/tracker_name and write tracker_1 if you use tracker or write controller_1 and then run:
+
+```
+python3 run_htc_tracker.py
+```
+Output of program is coordinates of tracker x, y, z
 
 Example: 
 Creating file in config/preset_data_calibration_3.txt:
