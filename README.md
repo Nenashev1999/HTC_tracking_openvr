@@ -34,7 +34,8 @@ After creating coordinates, we should create coordinates matrix in file config/t
 where elements from [0,0] to [2,2] is our coordinates in my case I don't change coordinates by multiplying, and matrix from [3,0] to [3,2] is shifting of coordinates in my case, I shift x + 1.5 and y + 1
 ```
 ### Calibration of algorithm
-Open the file run_calibration.py and change the parametr of calibration "calibration_config_id='*'" where * is a number of your file with coordinates for calibration.
+Open the file run_calibration.py and change the parametr of calibration "calibration_config_id='*'".
+Where * is a number of your file with coordinates for calibration.
 Run the calibration
 ```
 python3 run_calibration.py
