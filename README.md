@@ -39,7 +39,9 @@ Run the calibration
 ```
 python3 run_calibration.py
 ```
-Follow to instruction and after finishing run:
+Follow to instruction.
+### Runnong the algorithm
+After calibration all parameters will be saved in config and you can run the algorithm
 ```
 python3 run_htc_tracker.py
 ```
