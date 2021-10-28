@@ -17,6 +17,7 @@ For this step make some points on your plane, and measure it true coordinates x,
 
 Example: 
 Creating file in config/preset_data_calibration_3.txt:
+'''
 0.042 0.042 0
 0.042 1.958 0
 2.958 1.958 0
@@ -24,5 +25,6 @@ Creating file in config/preset_data_calibration_3.txt:
 .
 .
 .
+'''
 
 After creating coordinates
