@@ -47,7 +47,7 @@ Run the calibration
 ```
 python3 run_calibration.py
 ```
-Follow to instruction.
+Follow the instruction.
 ### Running the algorithm
 After calibration all parameters will be saved in config and you can run the algorithm, it will work 50sec and write data into a file, to change this parameters open the file run_htc_tracker and change parameter eps_time and path_to_save
 
