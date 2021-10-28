@@ -5,11 +5,9 @@ import numpy as np
 from .htc_calibrator import HTCCalibrator
 from .triad_openvr import triad_openvr
 
-DEFAULT_TRANSFORM = np.array([[1, 0, 0, 1.5],
-                              [0, -1, 0, 1],
-                              [0, 0, 1, 0]])
-DEFAULT_TRACKER_NAME = "tracker_1"
-
+config_path="config"
+DEFAULT_TRANSFORM = np.loadtxt(os.path.join(config_path, "transformation_matrix.txt"))
+DEFAULT_TRACKER_NAME = np.loadtxt(os.path.join(config_path, "tracker_name.txt"))
 
 class HTCTracker:
     def __init__(self, tracker_name=DEFAULT_TRACKER_NAME, default_transform=DEFAULT_TRANSFORM, calibration_config_id=0,
