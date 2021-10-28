@@ -26,7 +26,7 @@ Creating file in config/preset_data_calibration_3.txt:
 .
 .
 ```
-After creating coordinates, we should create our coordinates matrix in file config/transformation_matrix.txt
+After creating coordinates, we should create coordinates matrix in file config/transformation_matrix.txt
 ```
 1, 0, 0, 1.5
 0, 1, 0, 1
@@ -40,7 +40,7 @@ Run the calibration
 python3 run_calibration.py
 ```
 Follow to instruction.
-### Runnong the algorithm
+### Running the algorithm
 After calibration all parameters will be saved in config and you can run the algorithm
 ```
 python3 run_htc_tracker.py
