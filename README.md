@@ -7,7 +7,11 @@ This algorithm can help to calibrate and geting position of the object.
 
 ### Preparation
 
-You should have HTC tracking VR system and tracker or controller.
+**Requirements**
+1) HTC tracking VR with controller and tracker
+2) Intalled Steam VR sofware
+
+**
 First you should download Steam software and in Steam you should download SteamVR.
 After you should launch the SteamVR and turn on all devices ralated to VR.
 Next step is calibration of space for calibration click right button in VR application and press "room setup" and follow the instruction.
